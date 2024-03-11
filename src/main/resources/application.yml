@@ -1,0 +1,25 @@
+app:
+  cache:
+    clear-interval: 3600000
+  proxy:
+    base-url: https://jsonplaceholder.typicode.com
+
+spring:
+  application:
+    name: proxy-application
+  datasource:
+      driver-class-name: org.postgresql.Driver
+      username: postgres #${POSTGRES_USERNAME}
+      password: postgres #${POSTGRES_PASSWORD}
+      url: jdbc:postgresql://localhost:5432/postgres_db
+      #url: jdbc:postgresql://localhost:${POSTGRES_LOCAL_PORT}/${POSTGRES_DATABASE}
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
